@@ -23,3 +23,16 @@ after_success:
     - docker push scramsay/multi-worker
 
 language: generic
+
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: us-east-1
+    app: multi-docker2
+    env: MultiDocker2-env
+    bucket_name: elasticbeanstalk-us-east-1-657749227937
+    bucket_path: multi-docker2
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
