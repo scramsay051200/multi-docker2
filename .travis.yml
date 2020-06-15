@@ -1,0 +1,4 @@
+
+language: generic
+script:
+    - docker run -e CI=true USERNAME/react-test npm test
